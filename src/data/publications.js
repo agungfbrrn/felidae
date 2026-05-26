@@ -47,7 +47,7 @@ export const scholarProfile = {
   title: "IF22",
   affiliation: "Sebelas April University, Indonesia",
   bio: "Informatics student passionate about UI/UX design and machine learning, focusing on creating user-centered digital solutions.",
-  avatarUrl: "/profile_pic.png",
+  avatarUrl: "/pfp2.png",
   scholarUrl: "https://scholar.google.com/citations?hl=en&user=OYZ1z9oAAAAJ",
   researchGateUrl: "https://www.researchgate.net/profile/Agung-Febrian-3?ev=hdr_xprf",
 
