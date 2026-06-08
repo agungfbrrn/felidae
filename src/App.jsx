@@ -194,7 +194,7 @@ function App() {
       {/* 4. FOOTER */}
       <footer className="footer-section">
         <div className="container footer-container">
-          <p className="footer-affiliation">{scholarProfile.name} &mdash; {scholarProfile.affiliation}</p>
+          <p className="footer-affiliation">{scholarProfile.name}</p>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
