@@ -194,7 +194,7 @@ function App() {
       {/* 4. FOOTER */}
       <footer className="footer-section">
         <div className="container footer-container">
-          <p className="footer-affiliation">{scholarProfile.name}</p>
+          <p className="footer-affiliation">Felidae</p>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
@@ -236,6 +236,23 @@ function App() {
                 
                 <h4 className="modal-abstract-title">Abstract</h4>
                 <p className="modal-abstract-text">{selectedPublication.abstract}</p>
+                
+                {/* DOI */}
+                {selectedPublication.doi && (
+                  <>
+                    <h4 className="modal-keywords-title" style={{ marginBottom: '4px' }}>DOI</h4>
+                    <p style={{ margin: '0 0 16px 0', fontSize: '14px' }}>
+                      <a 
+                        href={selectedPublication.doi} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ color: '#2563eb', textDecoration: 'underline', wordBreak: 'break-all' }}
+                      >
+                        {selectedPublication.doi}
+                      </a>
+                    </p>
+                  </>
+                )}
                 
                 <h4 className="modal-keywords-title">Keywords</h4>
                 <div className="modal-keywords">
