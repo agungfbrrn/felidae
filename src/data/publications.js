@@ -58,7 +58,7 @@ export const publications = [
 export const scholarProfile = {
   name: "Agung Febrian",
   affiliation: "West Java, Indonesia",
-  bio: "I built this space purely to log and share all the research and academic papers I’ve locked in so far. It’s basically my personal archive, open to anyone, academics, or industry folks who want to dive into my research contributions, data analysis, and the tech solutions I’ve been cooking up.",
+  bio: "I built this space purely to log and share all the research and academic papers I’ve locked in so far. It’s basically my personal archive, open to anyone, academics, or industry folks who want to dive into my research contributions.",
   avatarUrl: "/pfpp.jpg",
   scholarUrl: "https://scholar.google.com/citations?hl=en&user=OYZ1z9oAAAAJ",
   researchGateUrl: "https://www.researchgate.net/profile/Agung-Febrian-3?ev=hdr_xprf",
