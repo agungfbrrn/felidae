@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [selectedPublication, setSelectedPublication] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('newest');
 
   // ESC key keypress listener to close modal
   useEffect(() => {
@@ -51,16 +52,28 @@ function App() {
   };
 
   // Filter publications dynamically based on search query (Title, abstract, journal, keywords)
-  const filteredPublications = publications.filter((pub) => {
+  const filteredPublications = [...publications]
+  .filter((pub) => {
     const query = searchQuery.toLowerCase().trim();
+
     if (!query) return true;
+
     return (
       pub.title.toLowerCase().includes(query) ||
       pub.abstract.toLowerCase().includes(query) ||
       pub.journal.toLowerCase().includes(query) ||
-      pub.keywords.some((keyword) => keyword.toLowerCase().includes(query))
+      pub.keywords.some((keyword) =>
+        keyword.toLowerCase().includes(query)
+      )
     );
-  });
+  })
+    .sort((a, b) => {
+        if (sortBy === "newest") {
+            return new Date(b.date) - new Date(a.date);
+        }
+
+        return new Date(a.date) - new Date(b.date);
+    });
 
   return (
     <div className="app-wrapper">
@@ -141,6 +154,21 @@ function App() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+              </div>
+              <div className="sort-tabs">
+                <button
+                  className={sortBy === "newest" ? "active" : ""}
+                  onClick={() => setSortBy("newest")}
+                >
+                  Newest
+                </button>
+
+                <button
+                  className={sortBy === "oldest" ? "active" : ""}
+                  onClick={() => setSortBy("oldest")}
+                >
+                  Oldest
+                </button>
               </div>
             </div>
           </div>
